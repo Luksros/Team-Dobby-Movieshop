@@ -1,7 +1,18 @@
+using Microsoft.EntityFrameworkCore;
+using Team_Dobby_Movieshop.Data;
+using Team_Dobby_Movieshop.Interfaces;
+using Team_Dobby_Movieshop.Models;
+using Team_Dobby_Movieshop.Repos;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IGenericRepo<Customer>, CustomerRepo>();
+builder.Services.AddScoped<IGenericRepo<Genre>, GenreRepo>();
 
 var app = builder.Build();
 
