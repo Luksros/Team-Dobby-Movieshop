@@ -52,5 +52,13 @@ namespace Team_Dobby_Movieshop.Repos
             return cartToUpdate;
 
         }
+        public ShoppingCart TestMethod()
+        {
+            ShoppingCart testCart = new ShoppingCart()
+            {
+
+            };
+            return testCart;
+        }
     }
 }
