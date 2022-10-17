@@ -18,6 +18,8 @@ namespace Team_Dobby_Movieshop.Controllers
             return View();
         }
 
+
+        
         public IActionResult Privacy()
         {
             return View();

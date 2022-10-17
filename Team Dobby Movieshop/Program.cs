@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Team_Dobby_Movieshop.Data;
 using Team_Dobby_Movieshop.Interfaces;
@@ -11,8 +12,15 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")));
 
+
+builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
+
 builder.Services.AddScoped<IGenericRepo<Customer>, CustomerRepo>();
 builder.Services.AddScoped<IGenericRepo<Genre>, GenreRepo>();
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSession();
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
@@ -23,16 +31,16 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapRazorPages();
 
 app.Run();
