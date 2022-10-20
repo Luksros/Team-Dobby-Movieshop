@@ -1,8 +1,11 @@
-﻿namespace Team_Dobby_Movieshop.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Team_Dobby_Movieshop.Models
 {
     public class ShoppingcartItems
     {
-        public int ItemId { get; set; }
+        [Key]
+        public int Id { get; set; }
         public int ShoppingcartId { get; set; }
         public int MovieId { get; set; }
         public Movie Movie { get; set; }

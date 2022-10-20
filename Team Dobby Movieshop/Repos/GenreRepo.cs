@@ -37,7 +37,7 @@ namespace Team_Dobby_Movieshop.Repos
 
         public Genre GetById(int id)
         {
-            return _context.Genres.FirstOrDefault(g => g.GenreId == id);
+            return _context.Genres.FirstOrDefault(g => g.Id == id);
         }
 
         public Genre Update(Genre item, int id)

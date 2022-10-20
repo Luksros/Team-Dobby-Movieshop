@@ -1,8 +1,11 @@
-﻿namespace Team_Dobby_Movieshop.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Team_Dobby_Movieshop.Models
 {
     public class Order
     {
-        public int OrderId { get; set; }
+        [Key]
+        public int Id { get; set; }
         public int CustomerId { get; set; }
         public Customer Customer { get; set; }
         public DateTime OrderDate { get; set; }

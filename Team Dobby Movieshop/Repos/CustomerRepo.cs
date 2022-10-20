@@ -37,16 +37,16 @@ namespace Team_Dobby_Movieshop.Repos
 
         public Customer GetById(int id)
         {
-            return _context.Customers.FirstOrDefault(c => c.CustomerId == id);
+            return _context.Customers.FirstOrDefault(c => c.Id == id);
         }
 
         public Customer Update(Customer item, int id)
         {
-            Customer customerToUpdate = _context.Customers.FirstOrDefault(c => c.CustomerId == id);
+            Customer customerToUpdate = _context.Customers.FirstOrDefault(c => c.Id == id);
             if (customerToUpdate != null)
             {
                 customerToUpdate.CustomerName = item.CustomerName;
-                customerToUpdate.UserName = item.UserName;
+                //customerToUpdate.UserName = item.UserName;
                 customerToUpdate.PhoneNumber = item.PhoneNumber;
                 customerToUpdate.Address = item.Address;
                 _context.SaveChanges();

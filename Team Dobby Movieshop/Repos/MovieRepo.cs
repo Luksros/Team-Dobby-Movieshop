@@ -34,7 +34,7 @@ namespace Team_Dobby_Movieshop.Repos
 
         public Movie GetMovieById(int id)
         {
-            return _context.Movies.FirstOrDefault(m => m.MovieId == id);
+            return _context.Movies.FirstOrDefault(m => m.Id == id);
         }
 
         public Movie GetMovieByName(string name)

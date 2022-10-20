@@ -32,7 +32,7 @@ namespace Team_Dobby_Movieshop.Repos
 
         public Order GetById(int id)
         {
-            return _context.Orders.FirstOrDefault(o => o.OrderId == id);
+            return _context.Orders.FirstOrDefault(o => o.Id == id);
         }
 
         public Order Update(Order item, int id)

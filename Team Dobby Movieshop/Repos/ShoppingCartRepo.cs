@@ -37,7 +37,7 @@ namespace Team_Dobby_Movieshop.Repos
 
         public ShoppingCart GetById(int id)
         {
-            return _context.ShoppingCarts.FirstOrDefault(g => g.ShoppingCartId == id);
+            return _context.ShoppingCarts.FirstOrDefault(g => g.Id == id);
         }
 
         public ShoppingCart Update(ShoppingCart item, int id)
