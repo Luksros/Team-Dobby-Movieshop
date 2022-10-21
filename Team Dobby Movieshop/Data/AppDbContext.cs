@@ -19,5 +19,10 @@ namespace Team_Dobby_Movieshop.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public DbSet<ShoppingcartItems> ShoppingCartItems { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);  
+        }
     }
 }

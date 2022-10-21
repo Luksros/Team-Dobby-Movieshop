@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Team_Dobby_Movieshop.Models;
 
@@ -17,10 +18,13 @@ namespace Team_Dobby_Movieshop.Controllers
         {
             return View();
         }
-
-
-        
+        [Authorize(Roles = "User")]
         public IActionResult Privacy()
+        {
+            return View();
+        }
+        [Authorize(Roles = "Admin")]
+        public IActionResult AdminRoom()
         {
             return View();
         }

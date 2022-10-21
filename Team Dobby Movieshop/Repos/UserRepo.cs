@@ -1,10 +1,11 @@
-﻿using Team_Dobby_Movieshop.Data;
+﻿using Microsoft.AspNetCore.Identity;
+using Team_Dobby_Movieshop.Data;
 using Team_Dobby_Movieshop.Interfaces;
 using Team_Dobby_Movieshop.Models;
 
 namespace Team_Dobby_Movieshop.Repos
 {
-    //public class UserRepo : IGenericRepo<User>
+    //public class UserRepo : IGenericRepo<IdentityUser>
     //{
     //    private readonly AppDbContext _context;
     //    public UserRepo(AppDbContext context)
@@ -22,7 +23,7 @@ namespace Team_Dobby_Movieshop.Repos
     //    public User Delete(int id)
     //    {
     //        var userToDelete = GetById(id);
-    //        if(userToDelete != null)
+    //        if (userToDelete != null)
     //        {
     //            _context.Remove(userToDelete);
     //            _context.SaveChanges();
