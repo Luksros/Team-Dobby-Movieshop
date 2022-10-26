@@ -43,7 +43,7 @@
             </form>
         </li>
     }
-    else
+    @if(!SignInManager.IsSignedIn(User))
     {
         <li class="nav-item">
             <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>

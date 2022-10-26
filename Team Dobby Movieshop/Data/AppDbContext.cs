@@ -22,7 +22,14 @@ namespace Team_Dobby_Movieshop.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(builder);  
+            base.OnModelCreating(builder);
+
+            builder.Entity<IdentityRole>().HasData(new IdentityRole
+            { Id = "9fa474d4-0246-47db-834e-5b44c2d3ae19", Name = "User", NormalizedName ="USER" });
+
+            builder.Entity<IdentityRole>().HasData(new IdentityRole
+            { Id = "d49bc437-f9e7-41c4-be19-c17ad1691612", Name = "Admin", NormalizedName = "ADMIN" });
+
         }
     }
 }
